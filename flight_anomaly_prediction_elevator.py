@@ -49,10 +49,10 @@ warnings.filterwarnings('ignore') # Silence scikit-learn warning
 RANDOM_STATE = 42
 
 # Data path
-data_path = 'C:Users/User/Downloads/Dataset/Dataset/'
+data_path = 'Dataset/'
 
 # Path and filename DataFrames dictionary
-df_file_name = "C:/Users/User/Downloads/Dataset/preprocessed_median-resampling_feature-selection.pkl"
+df_file_name = "preprocessed_median-resampling_feature-selection.pkl"
 
 # Functions
 
@@ -127,7 +127,7 @@ def pre_processing_data(data_path, unused_flight_list, unused_topic_list, unused
             # Rename existing columns
             new_columns = list(map(lambda x: f"{topic_name}.{x.replace('field.', '')}", dfx.columns))
             # Change column names
-            dfx = dfx.set_axis(new_columns, axis=1, inplace=False)
+            #dfx = dfx.set_axis(new_columns, axis=1, inplace=False) #aqui
             # Drop all covariance columns
             dfx = dfx.drop(dfx.filter(regex='covariance').columns, axis=1)
             # Resample the dataset to 5Hz frequency 
@@ -382,11 +382,12 @@ all_X, all_y = split_X_y(all_data, balance_data=True)
 all_train_test_data = apply_k_fold(all_X, all_y)
 
 
+"""
 # TRAINING
 clf = svm.SVC(random_state=RANDOM_STATE)
 
 # Nome do arquivo de saída
-output_file = "resultado_classificacao.txt"
+output_file = "resultado_classificacao2.txt"
 
 # Abre o arquivo em modo de escrita
 with open(output_file, "w") as file:
@@ -399,22 +400,4 @@ with open(output_file, "w") as file:
 
     # Retorna a saída padrão para a tela
     sys.stdout = sys.__stdout__
-
-
-# TRAINING
-clf = svm.SVC(random_state=RANDOM_STATE)
-
-# Nome do arquivo de saída
-output_file = "resultado_classificacao.txt"
-
-# Abre o arquivo em modo de escrita
-with open(output_file, "w") as file:
-
-    # Redireciona a saída padrão para o arquivo
-    sys.stdout = file
-
-    # Chama a função "report_classification" e imprime o resultado no arquivo
-    report_classification(all_train_test_data, clf)
-
-    # Retorna a saída padrão para a tela
-    sys.stdout = sys.__stdout__
+"""
