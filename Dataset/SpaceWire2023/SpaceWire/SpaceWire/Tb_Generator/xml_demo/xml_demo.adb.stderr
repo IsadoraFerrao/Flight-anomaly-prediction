@@ -1,0 +1,4 @@
+xml_demo.adb:1:06: file "xmlada.ads" not found
+xml_demo.adb:1:12: missing ";"
+xml_demo.adb:2:06: file "xml.ads" not found
+xml_demo.adb:3:06: file "xml.ads" not found

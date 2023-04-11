@@ -1,0 +1,15 @@
+with "xmlada_unicode.gpr";
+with "xmlada_schema.gpr";
+with "xmlada_sax.gpr";
+with "xmlada_input.gpr";
+with "xmlada_dom.gpr";
+with "xmlada.gpr";
+
+project Default is
+
+   for Source_Dirs use (".");
+   for Object_Dir use ".";
+   for Main use ("main.adb");
+
+end Default;
+

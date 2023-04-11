@@ -1,0 +1,12 @@
+with "/usr/local/share/gpr/xmlada.gpr";
+project tb_generator is
+   for Source_Dirs use (".", "xmlada");
+   --for Library_Dirs use ("xmlada");
+   for Object_Dir use "obj";
+   for Exec_Dir use ".";
+   for Main use ("parse_xml_with_sax");
+   package Compiler is
+      for Switches ("Ada") use ("-gnata", "-gnatwa");
+   end Compiler;
+end tb_generator;
+
